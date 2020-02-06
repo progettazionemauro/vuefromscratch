@@ -6,8 +6,12 @@
     <body>
       
         <div class="container" id="app">
-          <input type="text" class="form-control w-25" v-model="maximum">
-            <div class="row d-flex mb-3 align-items-center" 
+                <div class="form-inline mr-auto">
+                  <label class="font-weight-bold mr-2" for="formMax"> max </label> 
+                <input type="text" id="formMax" class="form-control w-25" v-model="maximum">
+          </div>
+          <input type="range" class="custom-range" min="0"  max ="200" v-model="maximum">
+          <div class="row d-flex mb-3 align-items-center" 
             v-for="item in products" 
             v-if="item.price<=Number(maximum)">
             <div class="col-sm-4">
@@ -19,7 +23,7 @@
                <p class="mb-0">{{ item.description }}</p>
                <div class="h5 float-right">${{item.price}}</div>     
               </div>
-          </div>
+          </label>
              
             </div>
           </div>
